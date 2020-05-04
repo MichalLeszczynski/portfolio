@@ -24,7 +24,7 @@ urlpatterns = [
     path("upload/", image_upload, name="upload"),
     path("admin/", admin.site.urls),
     path("projects/", include("projects.urls")),
-    path("", include("blog.urls")),
+    path("blog/", include("blog.urls")),
 ]
 
 if bool(settings.DEBUG):
