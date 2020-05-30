@@ -14,6 +14,11 @@ pipeline {
         sh 'cp /home/ml/docker-compose.prod.yml .'
       }
     }
+    stage('Stop app') {
+      steps {
+        sh 'docker-compose -f docker-compose.prod.yml down'
+      }
+    }
     stage('Deploy app') {
       steps {
         sh 'docker-compose -f docker-compose.prod.yml up --build -d'
