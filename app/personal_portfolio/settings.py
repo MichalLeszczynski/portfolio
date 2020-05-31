@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "projects",
     "blog",
     "upload",
+    "users",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,7 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+LOGIN_REDIRECT_URL = 'blog_index'
