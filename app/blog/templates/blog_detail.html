@@ -2,6 +2,9 @@
 {% block page_content %}
 
 <div class="col-md-8 offset-md-2">
+    {% if post.image %}
+        <img class="card-img-top" src="/mediafiles/{{ post.image }} " style="max-height: 400px; max-width:720px;">
+    {% endif %}
     <h1>{{ post.title }}</h1>
 
     <small>

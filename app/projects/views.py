@@ -6,6 +6,9 @@ from projects.models import Project
 
 def project_index(request):
     projects = Project.objects.all()
+    for project in projects:
+        if len(project.description) > 100:
+            project.description = project.description[:100] + '...'
     context = {"projects": projects}
     return render(request, "project_index.html", context)
 

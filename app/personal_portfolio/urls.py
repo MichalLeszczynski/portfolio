@@ -22,8 +22,12 @@ from django.contrib.auth import views as auth_views
 from upload.views import image_upload
 from users.views import register
 
+from django.views.generic import RedirectView
+
+
 urlpatterns = [
-    path("upload/", image_upload, name="upload"),
+    path('', RedirectView.as_view(url='blog/')),
+    path("upload/", image_upload, name="upload"), 
     path("admin/", admin.site.urls),
     path("projects/", include("projects.urls")),
     path("blog/", include("blog.urls")),
