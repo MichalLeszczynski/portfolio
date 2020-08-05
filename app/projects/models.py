@@ -6,3 +6,6 @@ class Project(models.Model):
     description = models.TextField()
     technology = models.CharField(max_length=20)
     image = models.CharField(max_length=20)
+
+    def __str__(self):
+        return 'Project: ' + self.title
